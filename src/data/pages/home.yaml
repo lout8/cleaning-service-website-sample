@@ -1,0 +1,35 @@
+header: Title
+underheader: Subtitle will be here
+headerImage: img/landingbackground.jpg
+services:
+  - name: "Services "
+    slug: /uphresies
+    description: something here
+    image: img/services.jpg
+    button: all services
+  - name: Shop
+    slug: /proionta
+    description: something here
+    image: img/store.jpg
+    button: all products
+companyDisc: Here will be something for the company
+partners:
+  - image: img/AADE_logo.svg
+  - image: img/Barking_Well.png
+  - image: img/aryzta_greece.png
+  - image: img/doculand-logo.png
+  - image: img/euroins_blue_gr.jpg
+  - image: img/falcon_logo_dark_edited.svg
+  - image: img/hellas_digital.jpg
+  - image: img/karagiannis.png
+  - image: img/kms_medical.gif
+  - image: img/logo-paiania2.png
+  - image: img/logo-paperia-wide-logobig3.png
+  - image: img/poukamisas.png
+  - image: img/select_bakery.png
+  - image: img/smart_tankers.jpg
+  - image: img/soeasygr.png
+  - image: img/tanweer.png
+  - image: img/tore.png
+  - image: img/toulas.jpg
+  - image: img/tsakas_ltd_gr.jpg

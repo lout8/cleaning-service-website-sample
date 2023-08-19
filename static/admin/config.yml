@@ -1,0 +1,82 @@
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+media_folder: static/img/
+public_folder: /img/
+
+collections:
+    #Services
+  - name: services
+    label: Υπηρεσίες
+    folder: src/data/services
+    create: true
+    fields:
+      - { label: "Τιτλος", name: "title", widget: "string" }
+      - { label: "Περιγραφη", name: "description", widget: "markdown" }
+      - { label: "Εικονα", name: "image", widget: "image", choose_url: false, media_folder: "img/" }
+    #Products 
+  - name: "products"
+    label: "Προϊόντα"
+    folder: "src/data/products"
+    create: true
+    fields:
+      - { label: "Τιτλος", name: "title", widget: "string" }
+      - {label: "Πολλαπλες τιμες", name: "multisize", widget: "boolean", default: false }
+      - label: "Μεγεθοι"
+        name: "sizes" 
+        widget: "list"
+        summary: '{{fields.sizename}}'
+        fields: 
+          - {label: "Μεγεθος", name: "sizename", widget: "string"}
+          - { label: "Τιμη", name: "price", widget: "string"}
+      - { label: "Κωδικος προϊοντος", name: "code", widget: "string" }
+      - { label: "Εικονα", name: "image", widget: "image", choose_url: false, media_folder: "img/" }
+      - { label: "Κατηγορια", name: "category", widget: "relation", collection: "menu", search_fields: ["subcategory.*.subname"], value_field: "subcategory.*.subname"}
+      - { label: "Slug", name: "slug", widget: "relation", collection: "menu", search_fields: ["subcategory.*.slug"], value_field: "subcategory.*.slug"}
+    #Menu
+  - name: "menu"
+    label: "Μενού"
+    folder: "src/data/menu"
+    create: true
+    fields:
+      - { label: "Κατηγορια", name: "category", widget: "string"}
+      - label: "Υποκατηγορια"
+        name: "subcategory" 
+        widget: "list"
+        summary: '{{fields.subname}}'
+        fields: 
+          - {label: Τιτλος Υποκατηγοριας, name: subname, widget: string}
+          - {label:  Slug, name: slug, widget: string}
+    #Pages
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Αρχική σελίδα"
+        name: "home"
+        file: "src/data/pages/home.yaml"
+        fields:
+          - {label: Τιτλος, name: header, widget: string}
+          - {label: Προταση, name: underheader, widget: string}
+          - {label: Εικονα τιτλου, name: headerImage, widget: image, choose_url: false, media_folder: "img/"}
+          - label: Υπηρεσιες
+            name: services
+            widget: list
+            fields:
+              - {label: Ονομα, name: name, widget: string}
+              - {label: Slug, name: slug, widget: string}
+              - {label: Περιγραφη, name: description, widget: markdown}
+              - {label: Εικονα, name: image, widget: image, choose_url: false, media_folder: "img/"}
+              - {label: Κουμπι, name: button, widget: string}
+          - {label: Περιγραφη εταιρειας, name: companyDisc, widget: markdown}
+          - label: Συνεργατες
+            name: partners
+            widget: list
+            fields:
+              - {label: Εικονα, name: image, widget: image, choose_url: false, media_folder: "img/"}
+    
+
+
+
