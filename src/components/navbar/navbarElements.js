@@ -39,16 +39,15 @@ export const NavContainer = styled.div`
 export const NavLogo = styled(Link)`
     display: flex;
     height: 65px;
-    width: auto;
+    width: 100px;
     cursor: pointer;
 
     @media only screen and (max-width: 1024px) {
         height: 55px;
-        width: auto;
     }
     @media only screen and (max-width: 769px) {
         height: 45px;
-        width: auto;
+        
     }
 
     ${SidebarContainer}{

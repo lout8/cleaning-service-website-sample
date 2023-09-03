@@ -179,8 +179,8 @@ const HomeItems = styled.div`
   border-radius: 10px;
   overflow: hidden;
   @media only screen and (max-width: 480px) {
-    width: 270px;
-    height: 250px;
+    width: 300px;
+    height: 270px;
   }
   ${HomeItemsHover}{
     bottom: ${({ isServiceClicked }) => (isServiceClicked ? '0' : '-235px;')};
@@ -342,7 +342,6 @@ const HomePartnersSlideWrapper = styled.div`
 const HomePartnersImages = styled(GatsbyImage)`
   margin-right: 20px;
   @media only screen and (max-width: 900px) {
-    height: 35px;
     width: auto;
     max-width: 200px;
     margin: 0 15px;
@@ -455,7 +454,7 @@ export const query = graphql`
         image {
           childImageSharp {
             gatsbyImageData(
-              height: 125,
+              height: 100,
               placeholder: BLURRED,
               formats: [AUTO, WEBP, AVIF],
             )
