@@ -203,7 +203,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage,
     items: data.allData.nodes,
     itemsPerPage: 16,
-    pathPrefix: '/products/',
+    pathPrefix: '/products',
     component: allproductsList,
     context: {
       allData: data.allData.nodes,

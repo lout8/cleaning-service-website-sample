@@ -100,7 +100,7 @@ const ProductsPrice = styled.div`
         content: "€";
     }
     &::before{
-        content: "από";
+        content: "from";
         margin-right: 5px;
         font-size: 1rem;
     }
@@ -117,7 +117,7 @@ const ProductsCode = styled.div`
     font-size: 0.7rem;
     opacity: 0.5;
     &::before{
-        content: "Κωδικός:";
+        content: "Code:";
         margin-right: 2px;
     }
 `
@@ -331,19 +331,19 @@ const ProductsList = ({ data, pageContext }) => {
     return (
         <MainContainer>
             <ProductsComponents handleInputChange={handleInputChange} setState={setState} emptyQuery={emptyQuery} query={query} productOrderBy={productOrderBy} HandleSorting={HandleSorting} hasSearchResults={hasSearchResults}>
-                <ProductHeader>{hasSearchResults ? <>'Ολα τα Προϊοντα</> : productTitle.category} </ProductHeader>
+                <ProductHeader>{hasSearchResults ? <>All Products</> : productTitle.category} </ProductHeader>
                     <FilterContainer>
                         <FilterItems>
-                            <ProductsFilterLabel>Ταξινόμιση:</ProductsFilterLabel>
+                            <ProductsFilterLabel>Sorted by:</ProductsFilterLabel>
                             <ProductsFilterSelect value={productOrderBy} onChange={HandleSorting} name="filter" id="filter" >
-                                <option value={0}>Ονοματικά</option>
-                                <option value={1}>Άυξουσα τιμή</option>
-                                <option value={2}>Φθίνουσα τιμη</option>
+                                <option value={0}>Name</option>
+                                <option value={1}>Price: Low to High</option>
+                                <option value={2}>Price: High to Low</option>
                             </ProductsFilterSelect>
                         </FilterItems>
                     </FilterContainer>
                     <ProductsContainer>
-                    {hasSearchResults && filteredData.length === 0 ? <ProductsEmtyLabel>Δεν βρέθηκαν αποτελέσματα</ProductsEmtyLabel> : 
+                    {hasSearchResults && filteredData.length === 0 ? <ProductsEmtyLabel>No results</ProductsEmtyLabel> : 
                         posts.map( productData => {
                             return <ProductComponents key={productData.id} id={productData.id} title={productData.frontmatter.title} multisize={productData.frontmatter.multisize} image={productData.frontmatter.image} code={productData.frontmatter.code} sizes={productData.frontmatter.sizes} />
                         })
@@ -354,16 +354,18 @@ const ProductsList = ({ data, pageContext }) => {
                     <ButtonsContainer>
                     {!isFirst && <LinkArrows to={previousPagePath}><MdKeyboardArrowLeft/></LinkArrows>}
                         {Array.from({ length: numberOfPages }, (_, i) => {
-                            if(humanPageNumber === 1) return
                             let numClass = 'pageNumber'
-                            if (humanPageNumber === i + 1) {
-                            numClass = 'currentPage'
-                            }
-                            return (
-                            <LinkBtn to={getPageNumberPath(i)} className={numClass} key={i + 1}>
-                                {i + 1}
-                            </LinkBtn>
-                            )
+                            if(numberOfPages > 1){
+                                if (humanPageNumber === i + 1) {
+                                    numClass = 'currentPage'
+                                    }
+                                    return (
+                                    <LinkBtn to={getPageNumberPath(i)} className={numClass} key={i + 1}>
+                                        {i + 1}
+                                    </LinkBtn>
+                                    )
+                            } 
+                            else return
                         })}
                     {!isLast && <LinkArrows to={ nextPagePath }><MdKeyboardArrowRight/></LinkArrows>}
                     </ButtonsContainer>
@@ -376,6 +378,8 @@ const ProductsList = ({ data, pageContext }) => {
 }
 
 export default ProductsList
+
+export const Head = () => <title>Products - Company Name</title>
 
 export const query = graphql`
     query ($slug: String, $limit: Int!, $skip: Int!) {

@@ -340,7 +340,7 @@ const MenuQuery = ({data}) => {
     }
     return(
         <div>
-            <MenuLinksContainer><MenuLink to={"/products/"} activeStyle={{ background: "#F7931E" }}>'Ολα τα Προϊόντα</MenuLink></MenuLinksContainer>
+            <MenuLinksContainer><MenuLink to={"/products/"} activeStyle={{ background: "#F7931E" }}>All Products</MenuLink></MenuLinksContainer>
             
             {menuData.map(menuData =>(
                 <CategoryComponents key={menuData.id} id={menuData.id} category={menuData.frontmatter.category} subcategory={menuData.frontmatter.subcategory} />
@@ -386,22 +386,22 @@ const ProductsComponents = ({ children, handleInputChange, setState, emptyQuery,
             <FilterContainer isOpenFilter={isOpenFilter}>
                 <FilterClosebutton onClick={toggle}><IoMdClose/></FilterClosebutton>
                 <SearchContainer>
-                    <SearchInput value={query} onChange={handleInputChange} type="text" name="search" id="search" placeholder="Αναζήτηση"/>
+                    <SearchInput value={query} onChange={handleInputChange} type="text" name="search" id="search" placeholder="Search"/>
                     <SearchInputIcon ><FaSearch/></SearchInputIcon>
                    {query === emptyQuery ? <></> : <SearchXIcon onClick={() => setState({filteredData:[], query: emptyQuery, })}><IoMdClose/></SearchXIcon>} 
                 </SearchContainer>
-                <FilterLabel >Κατηγορία</FilterLabel>
+                <FilterLabel >Category</FilterLabel>
                 <FilterLinksContainer >
                     <MenuComponents/>
                 </FilterLinksContainer>
-                <FilterLabel>Ταξινόμηση κατά</FilterLabel>
+                <FilterLabel>Sorted by:</FilterLabel>
                 <FilterSortingContainer value={productOrderBy} onChange={HandleSorting} name="filter" id="filter" >
                     <FilterInput type="radio" id="first" name="align1" value={0} checked={productOrderBy == 0}/>
-                    <FilterLinks htmlFor="first">Ονοματικά</FilterLinks>
+                    <FilterLinks htmlFor="first">Name</FilterLinks>
                     <FilterInput type="radio" id="second" name="align1" value={1} checked={productOrderBy == 1}/>
-                    <FilterLinks htmlFor="second">Άυξουσα τιμή</FilterLinks>
+                    <FilterLinks htmlFor="second">Price: Low to High</FilterLinks>
                     <FilterInput type="radio" id="third" name="align1" value={2} checked={productOrderBy == 2}/>
-                    <FilterLinks htmlFor="third">Φθίνουσα τιμή</FilterLinks>
+                    <FilterLinks htmlFor="third">Price: High to Low</FilterLinks>
                 </FilterSortingContainer>
             </FilterContainer>
             <FilterBackgroundContainer onClick={toggle} isOpenFilter={isOpenFilter}></FilterBackgroundContainer>
@@ -410,11 +410,11 @@ const ProductsComponents = ({ children, handleInputChange, setState, emptyQuery,
             <ProductsWrapper>
                 <MenuContainer>
                     <SearchContainer>
-                        <SearchInput value={query} onChange={handleInputChange} type="text" name="search" id="search" placeholder="Αναζήτηση"/>
+                        <SearchInput value={query} onChange={handleInputChange} type="text" name="search" id="search" placeholder="Search"/>
                         <SearchInputIcon><FaSearch/></SearchInputIcon>
                         {query === emptyQuery ? <></> : <SearchXIcon onClick={() => setState({filteredData:[], query: emptyQuery, })}><IoMdClose/></SearchXIcon>} 
                     </SearchContainer>
-                    <FilterLabel >Κατηγορία</FilterLabel>
+                    <FilterLabel >Category</FilterLabel>
                     <MenuComponents/>
                 </MenuContainer>
             </ProductsWrapper>

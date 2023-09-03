@@ -9,73 +9,73 @@ public_folder: /img/
 
 collections:
     #Services
-  - name: services
-    label: Υπηρεσίες
-    folder: src/data/services
+  - name: "services"
+    label: "Services"
+    folder: "src/data/theservices"
     create: true
     fields:
-      - { label: "Τιτλος", name: "title", widget: "string" }
-      - { label: "Περιγραφη", name: "description", widget: "markdown" }
-      - { label: "Εικονα", name: "image", widget: "image", choose_url: false, media_folder: "img/" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image", choose_url: false, media_folder: "img/" }
     #Products 
   - name: "products"
-    label: "Προϊόντα"
+    label: "Products"
     folder: "src/data/products"
     create: true
     fields:
-      - { label: "Τιτλος", name: "title", widget: "string" }
-      - {label: "Πολλαπλες τιμες", name: "multisize", widget: "boolean", default: false }
-      - label: "Μεγεθοι"
+      - { label: "Title", name: "title", widget: "string" }
+      - {label: "Multiple Prices", name: "multisize", widget: "boolean", default: false }
+      - label: "Sizes"
         name: "sizes" 
         widget: "list"
         summary: '{{fields.sizename}}'
         fields: 
-          - {label: "Μεγεθος", name: "sizename", widget: "string"}
-          - { label: "Τιμη", name: "price", widget: "string"}
-      - { label: "Κωδικος προϊοντος", name: "code", widget: "string" }
-      - { label: "Εικονα", name: "image", widget: "image", choose_url: false, media_folder: "img/" }
-      - { label: "Κατηγορια", name: "category", widget: "relation", collection: "menu", search_fields: ["subcategory.*.subname"], value_field: "subcategory.*.subname"}
+          - {label: "Size", name: "sizename", widget: "string"}
+          - { label: "Price", name: "price", widget: "string"}
+      - { label: "Product code", name: "code", widget: "string" }
+      - { label: "Image", name: "image", widget: "image", choose_url: false, media_folder: "img/" }
+      - { label: "Category", name: "category", widget: "relation", collection: "menu", search_fields: ["subcategory.*.subname"], value_field: "subcategory.*.subname"}
       - { label: "Slug", name: "slug", widget: "relation", collection: "menu", search_fields: ["subcategory.*.slug"], value_field: "subcategory.*.slug"}
     #Menu
   - name: "menu"
-    label: "Μενού"
+    label: "Menu"
     folder: "src/data/menu"
     create: true
     fields:
-      - { label: "Κατηγορια", name: "category", widget: "string"}
-      - label: "Υποκατηγορια"
+      - { label: "Category", name: "category", widget: "string"}
+      - label: "Subcategory"
         name: "subcategory" 
         widget: "list"
         summary: '{{fields.subname}}'
         fields: 
-          - {label: Τιτλος Υποκατηγοριας, name: subname, widget: string}
+          - {label: Subtitle Title, name: subname, widget: string}
           - {label:  Slug, name: slug, widget: string}
     #Pages
   - name: "pages"
     label: "Pages"
     files:
-      - label: "Αρχική σελίδα"
+      - label: "Home Page"
         name: "home"
         file: "src/data/pages/home.yaml"
         fields:
-          - {label: Τιτλος, name: header, widget: string}
-          - {label: Προταση, name: underheader, widget: string}
-          - {label: Εικονα τιτλου, name: headerImage, widget: image, choose_url: false, media_folder: "img/"}
-          - label: Υπηρεσιες
+          - {label: Title, name: header, widget: string}
+          - {label: Subtitle, name: underheader, widget: string}
+          - {label: Title Image, name: headerImage, widget: image, choose_url: false, media_folder: "img/"}
+          - label: Services
             name: services
             widget: list
             fields:
-              - {label: Ονομα, name: name, widget: string}
+              - {label: Name, name: name, widget: string}
               - {label: Slug, name: slug, widget: string}
-              - {label: Περιγραφη, name: description, widget: markdown}
-              - {label: Εικονα, name: image, widget: image, choose_url: false, media_folder: "img/"}
-              - {label: Κουμπι, name: button, widget: string}
-          - {label: Περιγραφη εταιρειας, name: companyDisc, widget: markdown}
-          - label: Συνεργατες
+              - {label: Description, name: description, widget: markdown}
+              - {label: Image, name: image, widget: image, choose_url: false, media_folder: "img/"}
+              - {label: Button, name: button, widget: string}
+          - {label: Company Description, name: companyDisc, widget: markdown}
+          - label: Partners
             name: partners
             widget: list
             fields:
-              - {label: Εικονα, name: image, widget: image, choose_url: false, media_folder: "img/"}
+              - {label: Image, name: image, widget: image, choose_url: false, media_folder: "img/"}
     
 
 

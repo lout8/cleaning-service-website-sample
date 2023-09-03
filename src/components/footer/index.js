@@ -16,9 +16,9 @@ const ServicesList = ({data}) => {
   return(
     <>
       <FooterItemsHeader>SERVICES</FooterItemsHeader>
-      <FooterItemsMenuLinks to="/proionta">Products</FooterItemsMenuLinks>
+      <FooterItemsMenuLinks to="/products">Products</FooterItemsMenuLinks>
       {servicesData.map((data) => (
-        <FooterItemsMenuLinks to="/uphresies">{data.frontmatter.title}</FooterItemsMenuLinks>
+        <FooterItemsMenuLinks to="/services">{data.frontmatter.title}</FooterItemsMenuLinks>
       ))}
     </>
   )
@@ -29,7 +29,7 @@ const QueryServices = () => {
       <StaticQuery
           query={graphql`
               query {
-                allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/services/"}}) {
+                allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/theservices/"}}) {
                   nodes {
                     id
                     frontmatter {

@@ -4,7 +4,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: `clean-for-you`,
+    title: `company-name`,
     siteUrl: `https://www.yourdomain.tld`
   },
   plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-styled-components", "gatsby-plugin-netlify", "gatsby-transformer-remark", "gatsby-transformer-yaml", `gatsby-plugin-image`, `gatsby-plugin-sharp`, `gatsby-transformer-sharp`,
@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Cleanforyou`,
-        short_name: `Cleanforyou`,
+        name: `companyname`,
+        short_name: `companyname`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#07407B`,
@@ -28,7 +28,7 @@ module.exports = {
         name: `data`,
         path: `${__dirname}/src/data/`,
       },
-    }, 
+    },
     //maps
     {
       resolve: 'gatsby-plugin-react-leaflet',

@@ -1,35 +1,49 @@
-header: Title
-underheader: Subtitle will be here
-headerImage: img/landingbackground.jpg
+header: Title of Website for Cleaning Services
+underheader: Professional Cleaning Services for Your Home and Office" -
+  Experience the Difference with Our Expert Team of Cleaners. Book Now for a
+  Spotless Space
+headerImage: img/gil-ribeiro-3ho8igcybds-unsplash.jpg
 services:
-  - name: "Services "
-    slug: /uphresies
-    description: something here
-    image: img/services.jpg
-    button: all services
-  - name: Shop
-    slug: /proionta
-    description: something here
-    image: img/store.jpg
-    button: all products
-companyDisc: Here will be something for the company
+  - name: Services
+    slug: /services
+    description: Our cleaning services entail a comprehensive range of professional
+      cleaning solutions, tailored to meet your specific needs. Our team of
+      experienced cleaners is dedicated to delivering exceptional results,
+      ensuring your premises are spotless and hygienic.
+    image: img/pexels-tima-miroshnichenko-6197116.jpg
+    button: Services
+  - name: Products
+    slug: /products
+    description: This establishment provides professional cleaning services to the
+      local community. Their team of experienced cleaners utilizes
+      top-of-the-line equipment and eco-friendly products to ensure a thorough
+      and efficient cleaning experience.
+    image: img/pexels-anna-shvets-5217899.jpg
+    button: Products
+companyDisc: Our cleaning company provides professional and reliable cleaning
+  services for both residential and commercial properties. Our team of
+  experienced and trained cleaners use eco-friendly and high-quality cleaning
+  products to ensure a safe and healthy environment for our clients. We offer a
+  range of services including regular cleaning, deep cleaning, move-in/move-out
+  cleaning, and post-construction cleaning. Our company is fully insured and
+  bonded, and we guarantee customer satisfaction. We pride ourselves on our
+  attention to detail and our commitment to providing exceptional service.
+  Contact us today to schedule a cleaning appointment and experience the
+  difference our company can make.
 partners:
-  - image: img/AADE_logo.svg
-  - image: img/Barking_Well.png
-  - image: img/aryzta_greece.png
-  - image: img/doculand-logo.png
-  - image: img/euroins_blue_gr.jpg
-  - image: img/falcon_logo_dark_edited.svg
-  - image: img/hellas_digital.jpg
-  - image: img/karagiannis.png
-  - image: img/kms_medical.gif
-  - image: img/logo-paiania2.png
-  - image: img/logo-paperia-wide-logobig3.png
-  - image: img/poukamisas.png
-  - image: img/select_bakery.png
-  - image: img/smart_tankers.jpg
-  - image: img/soeasygr.png
-  - image: img/tanweer.png
-  - image: img/tore.png
-  - image: img/toulas.jpg
-  - image: img/tsakas_ltd_gr.jpg
+  - image: img/Frame 10.png
+  - image: img/Frame 11.png
+  - image: img/Frame 12.png
+  - image: img/Frame 13.png
+  - image: img/Frame 14.png
+  - image: img/Frame 15.png
+  - image: img/Frame 16.png
+  - image: img/Frame 17.png
+  - image: img/Frame 18.png
+  - image: img/Frame 19.png
+  - image: img/Frame 20.png
+  - image: img/Frame 21.png
+  - image: img/Frame 22.png
+  - image: img/Frame 23.png
+  - image: img/Frame 24.png
+  - image: img/Frame 9.png

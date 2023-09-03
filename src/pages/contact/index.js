@@ -8,7 +8,7 @@ import {FaMapMarkerAlt} from "@react-icons/all-files/fa/FaMapMarkerAlt"
 import {FaEnvelope} from "@react-icons/all-files/fa/FaEnvelope"
 import {FaMobile} from "@react-icons/all-files/fa/FaMobile"
 
- const MapWrapper = styled(MapContainer)`
+const MapWrapper = styled(MapContainer)`
   height: 400px;
   margin: 25px 100px;
   border-radius: 10px;
@@ -245,12 +245,12 @@ const ContactPage = ({ data }) => {
   
   return (
     <PrimarycComponents>
-      <MapWrapper center={[37.95585,23.85897]} zoom={16} scrollWheelZoom={false}>
+      <MapWrapper center={[40.144307,22.399911]} zoom={16} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[37.95585,23.85897]}>
+          <Marker position={[40.144307,22.399911]}>
             <Popup>
               <a href="https://goo.gl/maps/BEo5P3j6GZ4kNoTR7" target="_blank" rel="noopener noreferrer">Λεωφ. Λαυρίου 101, Παιανία 190 02</a>
             </Popup>
@@ -258,23 +258,23 @@ const ContactPage = ({ data }) => {
         </MapWrapper>
       <Contact>
         <ContactItems>
-          <ContactHeader>ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</ContactHeader>
-          <ContactLinksWrapper href="https://goo.gl/maps/BEo5P3j6GZ4kNoTR7" target="_blank" rel="noopener noreferrer"><FaMapMarkerAlt/><ContactLinks>Λεωφ. Λαυρίου 101, Παιανία <br/> 190 02</ContactLinks></ContactLinksWrapper>
-          {/* <ContactLinksWrapper href="tel: 6981239995" target="_blank" rel="noopener noreferrer"><FaMobile/><ContactLinks>6981239995</ContactLinks></ContactLinksWrapper> */}
-          <ContactLinksWrapper href="tel: 6987316288" target="_blank" rel="noopener noreferrer"><FaPhoneAlt/><ContactLinks>698 731 6288</ContactLinks></ContactLinksWrapper>
-          <ContactLinksWrapper href="mailto: info@cleanforyou.gr" target="_blank" rel="noopener noreferrer"><FaEnvelope/><ContactLinks>info@cleanforyou.gr</ContactLinks></ContactLinksWrapper>
+          <ContactHeader>Contact Information</ContactHeader>
+          <ContactLinksWrapper href="https://goo.gl/maps/tkNGUHigPBtYySd48" target="_blank" rel="noopener noreferrer"><FaMapMarkerAlt/><ContactLinks>Veronica Crossing 625, <br/> Kutchchester 190 02</ContactLinks></ContactLinksWrapper>
+          <ContactLinksWrapper href="tel: 6988888888" target="_blank" rel="noopener noreferrer"><FaMobile/><ContactLinks>698 888 8888</ContactLinks></ContactLinksWrapper>
+          <ContactLinksWrapper href="tel: 2627777777" target="_blank" rel="noopener noreferrer"><FaPhoneAlt/><ContactLinks>262 777 7777</ContactLinks></ContactLinksWrapper>
+          <ContactLinksWrapper href="mailto: info@company.com" target="_blank" rel="noopener noreferrer"><FaEnvelope/><ContactLinks>info@company.com</ContactLinks></ContactLinksWrapper>
         </ContactItems>
         <ContactItems>
-          <ContactHeader>ΩΡΑΡΙΟ ΚΑΤΑΣΤΗΜΑΤΟΣ</ContactHeader>
+          <ContactHeader>Business Hours</ContactHeader>
             <ContactScedule>
               <ContactSceduleContainer>
-                <ContactSceduleInfo>Δευ:</ContactSceduleInfo>
-                <ContactSceduleInfo>Τρι:</ContactSceduleInfo>
-                <ContactSceduleInfo>Τετ:</ContactSceduleInfo>
-                <ContactSceduleInfo>Πεμ:</ContactSceduleInfo>
-                <ContactSceduleInfo>Παρ:</ContactSceduleInfo>
-                <ContactSceduleInfo>Σαβ:</ContactSceduleInfo>
-                <ContactSceduleInfo>Κυρ:</ContactSceduleInfo>
+                <ContactSceduleInfo>Mon:</ContactSceduleInfo>
+                <ContactSceduleInfo>Tue:</ContactSceduleInfo>
+                <ContactSceduleInfo>Wed:</ContactSceduleInfo>
+                <ContactSceduleInfo>Thu:</ContactSceduleInfo>
+                <ContactSceduleInfo>Fri:</ContactSceduleInfo>
+                <ContactSceduleInfo>Sat:</ContactSceduleInfo>
+                <ContactSceduleInfo>Sun:</ContactSceduleInfo>
               </ContactSceduleContainer>
               <ContactSceduleContainer>
                 <ContactSceduleInfo>8:30 - 17:00</ContactSceduleInfo>
@@ -283,29 +283,29 @@ const ContactPage = ({ data }) => {
                 <ContactSceduleInfo>8:30 - 19:00</ContactSceduleInfo>
                 <ContactSceduleInfo>8:30 - 19:00</ContactSceduleInfo>
                 <ContactSceduleInfo>8:30 - 15:00</ContactSceduleInfo>
-                <ContactSceduleInfo>Κλειστά</ContactSceduleInfo>
+                <ContactSceduleInfo>Closed</ContactSceduleInfo>
               </ContactSceduleContainer>
             </ContactScedule>
         </ContactItems>
         <ContactItems>
-          <ContactHeader>ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ</ContactHeader>   
+          <ContactHeader>Contact Form</ContactHeader>   
           {/* Services */}
           <ContactForm name="services" method="POST"  onSubmit={e => handleSubmit(e)} action={THIS_PAGE} data-netlify="true" netlify-honeypot="bot-field">
             <ContactMessage start={start} sent={sent} id="btn">{statusText}</ContactMessage>
             <ContactInput type="hidden" name="form-name" value="services"/>
             <input style={{display: "none"}} name="bot-field" />
-            <ContactInput type="text" name="name" id="name"  value={formData.name} onChange={e => handleChange(e)} placeholder="Ονομα" required/>
+            <ContactInput type="text" name="name" id="name"  value={formData.name} onChange={e => handleChange(e)} placeholder="Name" required/>
             <ContactInput type="email" name="email" id="email" value={formData.email} onChange={e => handleChange(e)} placeholder="Email" required/>
-            <ContactInput type="tel" name="phone" id="phone" value={formData.phone} onChange={e => handleChange(e)} placeholder="Τηλέφωνο" pattern="[0-9]{10}" required/>
+            <ContactInput type="tel" name="phone" id="phone" value={formData.phone} onChange={e => handleChange(e)} placeholder="Phone" pattern="[0-9]{10}" required/>
             <ContactSelect name="selectServices" id="selectServices" value={formData.selectServices} onChange={e => handleChange(e)} required>
-              <option value="DEFAULT" disabled>-- Ενδιαφέρομαι για: --</option>
+              <option value="DEFAULT" disabled>-- I'm interested in: --</option>
               {servicesData.map((services) => (
                 <option key={services.id}>{services.frontmatter.title}</option>
               ))}
             </ContactSelect>
-            <ContactTextarea name="message" value={formData.message} onChange={e => handleChange(e)} rows="5" placeholder="Μήνυμα" required/>
+            <ContactTextarea name="message" value={formData.message} onChange={e => handleChange(e)} rows="5" placeholder="Message" required/>
             <div data-netlify-recaptcha="true"></div>
-            <ContactButton type="submit">Αποστολη</ContactButton>
+            <ContactButton type="submit">Sumbit</ContactButton>
           </ContactForm>         
         </ContactItems>
       </Contact>
@@ -315,11 +315,11 @@ const ContactPage = ({ data }) => {
 
 export default ContactPage
 
-export const Head = () => <title>Επικοινωνία - Clean for you</title>
+export const Head = () => <title>Contact - Company Name</title>
 
 export const query = graphql`
   query ServicesQuery {
-    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/services/"}}) {
+    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/theservices/"}}) {
       nodes {
         id
         frontmatter {

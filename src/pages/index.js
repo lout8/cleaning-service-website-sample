@@ -317,7 +317,6 @@ const HomePartnersSlideWrapper = styled.div`
   white-space: nowrap;
   margin-bottom: 50px;
   width: 100%;
-  height: 50px;
   &:hover{
     ${HomePartnersSlideContainer}{
       animation-play-state: paused;
@@ -340,11 +339,8 @@ const HomePartnersSlideWrapper = styled.div`
     background: linear-gradient(to right, rgb(255, 255, 255, 0), white);
   }
 `
-const HomePartnersImages = styled.img`
-  height: 50px;
-  width: auto;
-  max-width: 200px;
-  margin: 0 20px;
+const HomePartnersImages = styled(GatsbyImage)`
+  margin-right: 20px;
   @media only screen and (max-width: 900px) {
     height: 35px;
     width: auto;
@@ -388,7 +384,7 @@ const IndexPage = ({data}) => {
           </HomeTextContainer>
         </HomeImageContainer>
         <HomeContainer className="coloredContainer">
-          <HomeHeader>οι υπηρεσιες μας<HomeHeaderUnderline className="coloredContainer"/></HomeHeader>
+          <HomeHeader>Our services<HomeHeaderUnderline className="coloredContainer"/></HomeHeader>
             <HomeItemsContainer>
               {HomeData.services.map((data) =>{
                 return(
@@ -398,32 +394,33 @@ const IndexPage = ({data}) => {
             </HomeItemsContainer >
         </HomeContainer>
         <HomeContainer className="regularContainer">
-          <HomeHeader>Η ΕΤΑΙΡΕΙΑ<HomeHeaderUnderline className="regularContainer"/></HomeHeader>
+          <HomeHeader>THE COMPANY<HomeHeaderUnderline className="regularContainer"/></HomeHeader>
           <HomeCompanyText>{HomeData.companyDisc}</HomeCompanyText>
-          <HomeCompanyButton to="/epikoinonia">ΕΠΙΚΟΙΝΩΝΙΑ</HomeCompanyButton>
+          <HomeCompanyButton to="/epikoinonia">contact us</HomeCompanyButton>
         </HomeContainer>
         <HomeContainer className="greyContainer">
-          <HomeHeader>ΣΥΝΕΡΓΑΣΙΕΣ<HomeHeaderUnderline className="greyContainer"/></HomeHeader>
-          <HomePartnersText>Έχουμε συνεργαστεί με πολλές εταιρείες όσο και οργανισμούς.</HomePartnersText>
+          <HomeHeader>PARTNERS<HomeHeaderUnderline className="greyContainer"/></HomeHeader>
+          <HomePartnersText>We have partnership with many organizations.</HomePartnersText>
           <HomePartnersSlideWrapper>
             <HomePartnersSlideContainer >
-              {PartnersImg.partners.map((data) => {
-                return <HomePartnersImages key={data.image} src={data.image} alt="img"/>
+              {HomeData.partners.map((data) => {
+                return <HomePartnersImages image={getImage(data.image)} alt={data.image}/>
+              })} 
+               {HomeData.partners.map((data) => {
+                return <HomePartnersImages image={getImage(data.image)} alt={data.image}/>
               })} 
             </HomePartnersSlideContainer>
             <HomePartnersSlideContainer >
-              {PartnersImg.partners.map((data) => {
-                return <HomePartnersImages key={data.image} src={data.image} alt="img"/>
-              })} 
+             
             </HomePartnersSlideContainer>
           </HomePartnersSlideWrapper>
         </HomeContainer>
-        <MapWrapper center={[37.95585,23.85897]} zoom={16} scrollWheelZoom={false}>
+        <MapWrapper center={[40.144307,22.399911]} zoom={16} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[37.95585,23.85897]}>
+          <Marker position={[40.144307,22.399911]}>
             <Popup>
               <a href="https://goo.gl/maps/BEo5P3j6GZ4kNoTR7" target="_blank" rel="noopener noreferrer">Λεωφ. Λαυρίου 101, Παιανία 190 02</a>
             </Popup>
@@ -435,7 +432,7 @@ const IndexPage = ({data}) => {
 }
 export default IndexPage
 
-export const Head = () => <title>Άρχικη - Clean for you</title>
+export const Head = () => <title>Home - Company Name</title>
 
 export const query = graphql`
   query HomeQuery {
@@ -458,6 +455,7 @@ export const query = graphql`
         image {
           childImageSharp {
             gatsbyImageData(
+              height: 125,
               placeholder: BLURRED,
               formats: [AUTO, WEBP, AVIF],
             )

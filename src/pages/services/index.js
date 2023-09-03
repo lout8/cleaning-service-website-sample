@@ -157,7 +157,7 @@ const ServicesPage = ({ data }) => {
       <Services> 
         <ServicesContainer>
           <ServicesHeaderContainer>
-            <ServicesHeader>Υπηρεσιες <ServicesHeaderUnderline/></ServicesHeader>
+            <ServicesHeader>services <ServicesHeaderUnderline/></ServicesHeader>
           </ServicesHeaderContainer>
             <ServicesItemsContainer>
               {servicesData.map(servicesData => (
@@ -171,11 +171,11 @@ const ServicesPage = ({ data }) => {
 }
 export default ServicesPage
 
-export const Head = () => <title>Υπηρεσίες - Clean for you</title>
+export const Head = () => <title>Services - Company Name</title>
 
 export const query = graphql`
   query ServicesQuery {
-  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/services/"}}) {
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/theservices/"}}) {
     nodes {
       id
       frontmatter {

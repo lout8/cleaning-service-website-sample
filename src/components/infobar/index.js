@@ -11,10 +11,10 @@ const Infobar = () => {
     <InfoBar>
     <InfoContainer id='info'>
       <InfoMenu>
-        <InfoItems><InfoLinks to="/epikoinonia"><InfoLinksIcon><FaMapMarkerAlt/></InfoLinksIcon>Veronica Crossing 625, Kutchchester 190 02</InfoLinks></InfoItems>
-        <InfoItems><InfoLinks to="/epikoinonia"><InfoLinksIcon><FaMobile/></InfoLinksIcon>698 888 8888</InfoLinks></InfoItems>
-        <InfoItems><InfoLinks to="/epikoinonia"><InfoLinksIcon><FaPhoneAlt/></InfoLinksIcon>262 777 7777</InfoLinks></InfoItems>
-        <InfoItems><InfoLinks to="/epikoinonia"><InfoLinksIcon><FaEnvelope/></InfoLinksIcon>info@company.com</InfoLinks></InfoItems>
+        <InfoItems><InfoLinks to="/contact"><InfoLinksIcon><FaMapMarkerAlt/></InfoLinksIcon>Veronica Crossing 625, Kutchchester 190 02</InfoLinks></InfoItems>
+        <InfoItems><InfoLinks to="/contact"><InfoLinksIcon><FaMobile/></InfoLinksIcon>698 888 8888</InfoLinks></InfoItems>
+        <InfoItems><InfoLinks to="/contact"><InfoLinksIcon><FaPhoneAlt/></InfoLinksIcon>262 777 7777</InfoLinks></InfoItems>
+        <InfoItems><InfoLinks to="/contact"><InfoLinksIcon><FaEnvelope/></InfoLinksIcon>info@company.com</InfoLinks></InfoItems>
       </InfoMenu>
     </InfoContainer>
     </InfoBar>
