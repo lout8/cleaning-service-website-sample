@@ -36,8 +36,8 @@ const Page404 = () => {
     <MainContainer>
       <GlobalStyle />
       <Title404>404</Title404>
-      <Subtitle404>Η σελίδα δεν βρέθηκε!</Subtitle404>
-      <Button404 to='/'>Επιστροφη στην αρχικη</Button404>
+      <Subtitle404>Page not found!</Subtitle404>
+      <Button404 to='/'>Back to home</Button404>
     </MainContainer>
       
   )
