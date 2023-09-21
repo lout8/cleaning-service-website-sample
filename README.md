@@ -70,8 +70,8 @@ This website was developed and designed for a local business, and it promotes th
  
 What the website provides:
 * Home page
-* Informations and skills page
-* Projects page
+* Services page
+* Products page
 * Contact info page
 
 <p align="right">(<a href="#top">back to top</a>)</p>
