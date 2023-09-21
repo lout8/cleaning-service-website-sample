@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/lout8/cleaning-service-website-sample">
-    <img src="images/logo.svg" alt="Logo" width="192" height="192">
+    <img src="src/images/logo.svg" alt="Logo" width="192" height="192">
   </a>
 
   <h3 align="center">Cleaning Service Sample</h3>
@@ -161,5 +161,9 @@ Project Link: [https://github.com/lout8/cleaning-service-website-sample](https:/
 [JavaScript-url]: https://www.javascript.com
 [HTML5]: https://img.shields.io/badge/HTML-e34c26?style=for-the-badge&logo=html5&logoColor=000000
 [HTML5-url]: https://www.w3.org/html/
+[CSS3]: https://img.shields.io/badge/CSS-264de4?style=for-the-badge&logo=css3&logoColor=000000
+[CSS3-url]: https://www.w3.org/Style/CSS/Overview.en.html
+[Styled-components]: https://img.shields.io/badge/styled%20components-F0DB4F?style=for-the-badge&logo=styled-components&logoColor=000000
+[Styled-components-url]: https://styled-components.com
 [DecapCMS]: https://img.shields.io/badge/Decap%20CMS-ffffff?style=for-the-badge&logo=decapcms&logoColor=ea3586
 [DecapCMS-url]: https://decapcms.org/
