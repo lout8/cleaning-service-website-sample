@@ -48,7 +48,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: "roboto";
-        overflow: ${({ isOpen, isOpenFilter }) => (isOpen || isOpenFilter ? 'hidden' : 'scroll')};
+        overflow: ${({ isOpen, isOpenFilter }) => (isOpen || isOpenFilter ? 'hidden' : 'auto')};
         overflow-x: hidden;
     }
     input, select, textarea{
