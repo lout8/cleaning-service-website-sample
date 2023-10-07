@@ -172,7 +172,7 @@ const FilterResposiveButton = styled.div`
     &:after{
         font-size: 1.1rem;
         margin-left: 5px;
-        content: "Φίλτρα";
+        content: "Filter";
     }
     opacity: 0;
     
