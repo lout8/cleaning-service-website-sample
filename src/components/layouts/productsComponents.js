@@ -207,7 +207,7 @@ const FilterContainer = styled.div`
         width: calc(100% - 50px);
         left: ${({ isOpenFilter }) => (isOpenFilter ? "0" : '-100%')};
     } 
-    overflow: scroll;
+    overflow: none;
     body{
         overflow: hidden;
     }
